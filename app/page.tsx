@@ -4,7 +4,16 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
-import { ChevronLeft, ChevronRight, ArrowRight, CheckCircle2, BarChart3, TrendingUp, Shield, Zap } from 'lucide-react'
+import {
+  ChevronLeft,
+  ChevronRight,
+  ArrowRight,
+  CheckCircle2,
+  BarChart3,
+  TrendingUp,
+  Shield,
+  Zap,
+} from 'lucide-react'
 
 const heroSlides = [
   {
@@ -59,18 +68,18 @@ export default function Home() {
               className={`absolute inset-0 transition-opacity duration-700 ${
                 index === currentSlide ? 'opacity-100' : 'opacity-0'
               }`}
-              style={{
-                backgroundImage: `url('${slide.image}')`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
             >
-              {/* Overlay */}
+              {/* Accessible image */}
+              <img
+                src={slide.image}
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
               <div className="absolute inset-0 bg-black/50" />
             </div>
           ))}
 
-          {/* Content */}
           <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight text-balance">
@@ -96,23 +105,26 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Carousel Controls */}
+          {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 bg-white/20 hover:bg-white/30 text-white rounded-lg transition-all"
             aria-label="Previous slide"
+            title="Previous slide"
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 bg-white/20 hover:bg-white/30 text-white rounded-lg transition-all"
           >
             <ChevronLeft size={28} />
           </button>
+
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 bg-white/20 hover:bg-white/30 text-white rounded-lg transition-all"
             aria-label="Next slide"
+            title="Next slide"
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 bg-white/20 hover:bg-white/30 text-white rounded-lg transition-all"
           >
             <ChevronRight size={28} />
           </button>
 
-          {/* Indicators */}
+          {/* Slide Indicators */}
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
             {heroSlides.map((_, index) => (
               <button
@@ -121,10 +133,13 @@ export default function Home() {
                   setCurrentSlide(index)
                   setAutoPlay(false)
                 }}
-                className={`w-3 h-3 rounded-full transition-all ${
-                  index === currentSlide ? 'bg-white w-8' : 'bg-white/50 hover:bg-white/75'
-                }`}
                 aria-label={`Go to slide ${index + 1}`}
+                title={`Go to slide ${index + 1}`}
+                className={`w-3 h-3 rounded-full transition-all ${
+                  index === currentSlide
+                    ? 'bg-white w-8'
+                    : 'bg-white/50 hover:bg-white/75'
+                }`}
               />
             ))}
           </div>
@@ -135,7 +150,9 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Core Services</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Our Core Services
+            </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
               Comprehensive accounting, audit, tax, and advisory solutions designed for your business growth
             </p>
@@ -189,6 +206,62 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Approaches to Professional Assignments */}
+      <section className="py-16 md:py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Approaches to Professional Assignments
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Our professional engagements are guided by globally recognized standards,
+              deep industry understanding, and a client-focused delivery model.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="bg-white rounded-xl p-8 border border-slate-200">
+              <h3 className="text-xl font-semibold mb-4">Methodology</h3>
+              <p className="text-slate-600">
+                We carry out audits in accordance with International Standards on Auditing (ISAs).
+                Our approach is primarily risk-based, focusing on understanding the assignment,
+                developing an audit strategy, and applying systems-based techniques where appropriate.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl p-8 border border-slate-200">
+              <h3 className="text-xl font-semibold mb-4">Focus</h3>
+              <p className="text-slate-600">
+                We focus on information flow that enables our clients to measure performance
+                and re-engineer business processes. We think globally and act locally,
+                delivering smart financial and business solutions beyond historical reporting.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl p-8 border border-slate-200">
+              <h3 className="text-xl font-semibold mb-4">Partner Involvement</h3>
+              <p className="text-slate-600">
+                Our engagements maintain a high level of partner involvement,
+                ensuring accountability, direct client contact, and audit planning
+                tailored to the client’s specific business and industry risks.
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl p-10 border border-slate-200 text-center max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold mb-4">Audit & Assurance</h3>
+            <p className="text-slate-600">
+              Our audit and assurance services provide confidence that financial statements
+              are prepared, in all material respects, in accordance with the applicable
+              financial reporting framework, supporting reliable decision-making.
+            </p>
+            <p className="mt-6 font-semibold text-blue-600">
+              Accounting | Audit | Tax | Advisory
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -211,6 +284,7 @@ export default function Home() {
                 ))}
               </ul>
             </div>
+
             <div className="bg-gradient-to-br from-blue-500/20 to-green-500/20 rounded-2xl p-8 border border-white/10">
               <div className="space-y-6">
                 <div>
@@ -218,7 +292,7 @@ export default function Home() {
                   <p className="text-gray-300">Businesses Served</p>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-green-400 mb-2">20+</div>
+                  <div className="text-4xl font-bold text-green-400 mb-2">10+</div>
                   <p className="text-gray-300">Years of Excellence</p>
                 </div>
                 <div>
@@ -234,7 +308,9 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Ready to Transform Your Financial Future?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+            Ready to Transform Your Financial Future?
+          </h2>
           <p className="text-xl text-slate-600 mb-8">
             Let's discuss how Advisory can help your business thrive with expert guidance and strategic solutions.
           </p>

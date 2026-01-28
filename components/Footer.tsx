@@ -14,7 +14,7 @@ export function Footer() {
               <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-green-500 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">A</span>
               </div>
-              <span className="font-bold text-lg">Advisory</span>
+              <span className="font-bold text-lg">Atero and Associates</span>
             </div>
             <p className="text-slate-400 text-sm mb-6">Professional accounting, audit, tax, and advisory services for businesses across East Africa and internationally.</p>
             <div className="flex gap-4">
@@ -53,13 +53,13 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-white mb-6">Contact Us</h3>
             <div className="space-y-4 text-sm">
-              <a href="mailto:hello@advisory.com" className="flex items-center gap-2 text-slate-400 hover:text-green-400 transition-colors">
+              <a href="mailto:info@ateroandassociates.com" className="flex items-center gap-2 text-slate-400 hover:text-green-400 transition-colors">
                 <Mail size={16} />
-                <span>hello@advisory.com</span>
+                <span>info@ateroandassociates.com</span>
               </a>
-              <a href="tel:+254700000000" className="flex items-center gap-2 text-slate-400 hover:text-green-400 transition-colors">
+              <a href="tel:+254728146422" className="flex items-center gap-2 text-slate-400 hover:text-green-400 transition-colors">
                 <Phone size={16} />
-                <span>+254 (0) 700 000 000</span>
+                <span>+254 728 146 422</span>
               </a>
               <div className="flex items-start gap-2 text-slate-400">
                 <MapPin size={16} className="flex-shrink-0 mt-0.5" />
@@ -72,7 +72,7 @@ export function Footer() {
         {/* Divider */}
         <div className="border-t border-slate-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-slate-400 text-sm">&copy; {currentYear} Advisory Consulting. All rights reserved.</p>
+            <p className="text-slate-400 text-sm">&copy; {currentYear} Atero and Associates. All rights reserved.</p>
             <div className="flex gap-6 text-sm">
               <Link href="#" className="text-slate-400 hover:text-green-400 transition-colors">Privacy Policy</Link>
               <Link href="#" className="text-slate-400 hover:text-green-400 transition-colors">Terms of Service</Link>

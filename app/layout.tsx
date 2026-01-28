@@ -11,7 +11,6 @@ export const metadata: Metadata = {
   title: 'Professional Accounting & Advisory Services | East Africa & International',
   description: 'Premium accounting, audit, tax, and advisory services for businesses. Expert consultants specializing in financial compliance, growth strategy, and enterprise solutions.',
   keywords: 'accounting, audit, tax services, advisory, consulting, East Africa',
-  generator: 'v0.app',
   openGraph: {
     title: 'Professional Accounting & Advisory Services',
     description: 'Premium accounting, audit, tax, and advisory services for businesses.',

@@ -61,14 +61,14 @@ export default function Contact() {
               {
                 icon: Phone,
                 title: 'Phone',
-                content: '+254 (0) 700 000 000',
+                content: '+254 728 146 422',
                 subtext: 'Monday to Friday, 9AM-5PM',
               },
               {
                 icon: MapPin,
                 title: 'Office',
-                content: 'Nairobi, Kenya',
-                subtext: 'Serving East Africa & Global',
+                content: 'Chyulu Road, UpperHill,',
+                subtext: 'KMA Centre, 4th Floor, Suite 4.2',
               },
               {
                 icon: Clock,

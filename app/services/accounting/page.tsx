@@ -96,79 +96,25 @@ export default function AccountingService() {
       {/* Services Offered */}
       <section className="py-16 md:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center">Accounting Services We Provide</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center">
+            Accounting Services We Provide
+          </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              {
-                title: 'Full-Charge Bookkeeping',
-                description: 'Complete bookkeeping services from transaction entry to monthly reconciliations.',
-                features: [
-                  'Daily transaction processing',
-                  'Account reconciliation',
-                  'Journal entry review',
-                  'Monthly close procedures',
-                ],
-              },
-              {
-                title: 'Monthly Financial Statements',
-                description: 'Timely preparation of accurate financial statements for decision-making.',
-                features: [
-                  'Balance sheet preparation',
-                  'Income statement',
-                  'Cash flow statement',
-                  'Supporting schedules',
-                ],
-              },
-              {
-                title: 'Bank Reconciliations',
-                description: 'Accurate reconciliation of bank accounts and resolution of discrepancies.',
-                features: [
-                  'Monthly bank reconciliation',
-                  'Issue investigation & resolution',
-                  'Reconciliation documentation',
-                  'Timing difference analysis',
-                ],
-              },
-              {
-                title: 'Accounts Receivable Management',
-                description: 'Professional management of customer accounts and invoice tracking.',
-                features: [
-                  'Invoice preparation',
-                  'Receivable aging reports',
-                  'Collection support',
-                  'Credit memo processing',
-                ],
-              },
-              {
-                title: 'Accounts Payable Management',
-                description: 'Efficient processing of vendor invoices and payment management.',
-                features: [
-                  'Invoice processing & approval',
-                  'Vendor management',
-                  'Payment scheduling',
-                  'Payable aging reports',
-                ],
-              },
-              {
-                title: 'Payroll Processing',
-                description: 'Accurate and timely payroll processing with tax compliance.',
-                features: [
-                  'Payroll calculation',
-                  'Tax withholding',
-                  'Payroll reporting',
-                  'Year-end processing',
-                ],
-              },
+              { title: 'Bookkeeping', items: ['Daily transaction recording', 'Ledger management', 'Journal entries review'] },
+              { title: 'Financial Statements', items: ['Preparation in accordance with IFRS and legal framework', 'Income statements, balance sheets, cash flows', 'Supporting schedules and notes'] },
+              { title: 'Management Accounting', items: ['Cash flow projections for overdraft and loan applications', 'Budget and variance analysis', 'Cost and price analysis'] },
+              { title: 'Financial Analysis', items: ['Cost-benefit analysis', 'Ratio analysis', 'Evaluation of financial institutions and markets', 'Investment analysis and determination'] },
+              { title: 'Project & Feasibility Studies', items: ['Project appraisals', 'Feasibility studies', 'Corporate recovery and liquidations'] },
             ].map((service, idx) => (
-              <div key={idx} className="bg-white rounded-xl p-8 border border-slate-200 hover:shadow-lg transition-all">
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
-                <p className="text-slate-600 mb-6">{service.description}</p>
-                <ul className="space-y-2">
-                  {service.features.map((feature, fdx) => (
-                    <li key={fdx} className="flex items-center gap-2 text-slate-700">
-                      <div className="w-2 h-2 bg-blue-600 rounded-full flex-shrink-0" />
-                      {feature}
+              <div key={idx} className="bg-white rounded-xl border border-slate-200 p-6 md:p-8 hover:shadow-lg flex flex-col">
+                <h3 className="text-xl font-bold text-slate-900 mb-4">{service.title}</h3>
+                <ul className="space-y-2 text-slate-700">
+                  {service.items.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0" />
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -188,13 +134,7 @@ export default function AccountingService() {
                 We leverage cloud-based accounting systems to provide you with real-time visibility into your financial position.
               </p>
               <ul className="space-y-3">
-                {[
-                  'Cloud-based accounting software',
-                  'Mobile accessibility',
-                  'Real-time reporting',
-                  'Automated reconciliation',
-                  'Secure data backup',
-                ].map((item, idx) => (
+                {['Cloud-based accounting software','Mobile accessibility','Real-time reporting','Automated reconciliation','Secure data backup'].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-2 text-slate-700">
                     <CheckCircle2 className="text-blue-600 flex-shrink-0" size={18} />
                     {item}
@@ -226,36 +166,9 @@ export default function AccountingService() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              {
-                title: 'Monthly Fixed Fee',
-                description: 'Predictable monthly fee for ongoing accounting services.',
-                benefits: [
-                  'Budgeting simplicity',
-                  'Unlimited transactions',
-                  'Regular financial statements',
-                  'Professional team access',
-                ],
-              },
-              {
-                title: 'Project-Based',
-                description: 'Specific accounting projects with defined scope and timeline.',
-                benefits: [
-                  'Flexible duration',
-                  'Clear deliverables',
-                  'One-time or periodic',
-                  'Custom pricing',
-                ],
-              },
-              {
-                title: 'Hybrid Model',
-                description: 'Combination of fixed and variable fees based on your needs.',
-                benefits: [
-                  'Customized solution',
-                  'Scaling flexibility',
-                  'Cost optimization',
-                  'Seasonal adjustment',
-                ],
-              },
+              { title: 'Monthly Fixed Fee', description: 'Predictable monthly fee for ongoing accounting services.', benefits: ['Budgeting simplicity','Unlimited transactions','Regular financial statements','Professional team access'] },
+              { title: 'Project-Based', description: 'Specific accounting projects with defined scope and timeline.', benefits: ['Flexible duration','Clear deliverables','One-time or periodic','Custom pricing'] },
+              { title: 'Hybrid Model', description: 'Combination of fixed and variable fees based on your needs.', benefits: ['Customized solution','Scaling flexibility','Cost optimization','Seasonal adjustment'] },
             ].map((model, idx) => (
               <div key={idx} className="bg-white rounded-xl p-8 border border-slate-200 hover:shadow-lg transition-all">
                 <h3 className="text-xl font-bold text-slate-900 mb-3">{model.title}</h3>
